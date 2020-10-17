@@ -1,0 +1,44 @@
+/**
+ * The class Skater represents regular skaters who skate at an ice rink - with name, address and class of membership.
+ * 
+ * @author M250 module team 
+ * @version v1.0
+ */
+public class Skater
+{
+
+   private String fullName;
+   private String address;
+   private char ageCategory;
+
+   /**
+    * Constructor for objects of class Skater
+    */
+   public Skater(String aFullName, String anAddress, char anAgeCategory)
+   {
+      // initialise instance variables
+      this.fullName = aFullName;
+      this.address = anAddress;
+      this.ageCategory = anAgeCategory;
+   }
+
+   public String getName()
+   {
+      return this.fullName;
+   }
+   
+   public String getAddress()
+   {
+      return this.address;
+   }
+   
+   public char getAgeCategory()
+   {
+      return this.ageCategory;
+   }
+   
+   public String toString()
+   {
+      return (this.getName() + " " + this.getAddress() + ", age category: " + this.getAgeCategory());
+   }
+}
