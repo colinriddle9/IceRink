@@ -1,0 +1,76 @@
+import java.util.*;
+
+/**
+ * The class IceRink is used to hold data about a collection of skaters. 
+ * 
+ * @author Colin Riddle
+ * @version 7/5/20 
+ */
+public class IceRink
+{
+    Map<String, Skater>skaters;
+   
+     
+   /**
+    * Constructor for objects of class IceRink
+    */
+   public IceRink()
+   {
+      super();
+      skaters = new HashMap<>();
+   }
+   
+   /**
+    * Creates an instance of skater and then adds it to the
+    * map referenced by the instance variable skater with
+    * membershipNum as the key.
+    */
+   public void addSkater(String memberShipNum, String name, String address, char ageCat)
+   {
+      Skater skaters = new Skater(name, address, ageCat);
+      this.skaters.put(memberShipNum, skaters); 
+   }
+   
+   /**
+    * For each skater held in the collection referenced by
+    * skaters, the method should print that skaters record
+    * to standard output, each skater record on a separate
+    * line.
+    */
+   public void printSkaters()
+   {
+      for  (Skater skater : skaters.values())
+      {
+        System.out.println(skater.toString());
+      }
+   }
+   
+   /**
+    * Returns record related to key or returns 
+    * appropriate message.
+    */
+   public Skater findSkaterWithMemberNum(String membershipNum)
+   {
+      Skater skater = skaters.get(membershipNum);
+      if(skater == null)
+      {
+         System.out.println("No skater with memberShip number" +membershipNum+ "Found!");
+      }
+      return skater;
+   }
+   
+   /**
+    * Returns record related to age category or returns 
+    * appropriate message.
+    */
+   public Skater findSkatersInAgeCat(char ageCat)
+   {
+      Skater skater = skaters.get(ageCat);
+      if(skater == null)
+      {
+         System.out.println("No skater in age category" +ageCat+ "Found!");
+      }
+      return skater;
+   }
+   
+}
